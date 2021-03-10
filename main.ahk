@@ -61,8 +61,8 @@ return
 Label:
 	SetTimer, Label, 0
 	{
-		if ( (GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1181,541)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,503)!="0xFFFFFF") and WinActive("ahk_exe YuanShen.exe")
-		;相比较原版把鼠标标识取色点取消了，新增了8个取色点（原版只有2个取色点），要更快的话鼠标标识取色点不能去掉，有能力可以来优化下这个东西，应该还能再优化
+		if ( (GetColor(1130,566)=="0xFFFFFF" or GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1181,541)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,503)!="0xFFFFFF") and WinActive("ahk_exe YuanShen.exe")
+		;相比较原版把鼠标标识取色点取消了，新增了9个取色点（原版只有2个取色点），要更快的话鼠标标识取色点不能去掉，有能力可以来优化下这个东西，应该还能再优化
 		;已知的问题，东西太多时，F键不在第一个物品的位置可能会无法触发
 			loop 6 
 			{
