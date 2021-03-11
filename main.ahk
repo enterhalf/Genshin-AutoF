@@ -69,9 +69,9 @@ Label:
 			if ( (GetColor(1130,566)=="0xFFFFFF" or GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1181,541)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,503)!="0xFFFFFF") ;1080p的小伙伴应该可以直接使用，不用重新取色
 			loop 6
 			{
-				Send {WheelDown}   ;下滑滚轮
-				Sleep 2
 				Send f
+				Sleep 12
+				Send {WheelDown}   ;下滑滚轮
 				Sleep 23
 			}
 			if  GetColor(1480,1012)=="0xFFCC33"  ;自动点击传送
