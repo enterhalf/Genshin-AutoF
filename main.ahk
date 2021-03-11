@@ -78,16 +78,6 @@ Label:
 			{
 				Click 1655,1005
 			}
-			/*
-			if GetColor(1447,589)=="0xFFFFFF" ;自动挣脱(稍微有点影响游戏平衡?)
-			{
-				loop 9
-				{
-					Send {Space}
-					Sleep 123
-				}
-			}
-			*/
 		}
 		
 	}
