@@ -49,7 +49,7 @@ $g:: ;G按键：长按0.5s-1.2s开启关闭，长按2s启动游戏
 		KeyWait, g
 		if (A_TimeSinceThisHotkey > 2000)	;启动游戏
 		{
-			run C:\Users\test\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\YuanShen.lnk 	;修改为自己的游戏路径
+			run C:\Program Files\Genshin Impact\Genshin Impact Game\YuanShen.exe 	;修改为自己的游戏路径
 			SoundPlay, %A_WinDir%\Media\Alarm02.wav 	;声音提示已启动游戏
 		}	
 		else if (A_TimeSinceThisHotkey > 500 and A_TimeSinceThisHotkey < 1200)	;开关
