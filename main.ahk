@@ -17,6 +17,9 @@
 ;2、是否右键以管理员模式启动
 ;3、游戏中按F10左下角出现on才算成功运行
 
+;------------------------------------------------启动原神 ↓↓↓
+run C:\Users\test\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\YuanShen.lnk ;可修改为自己的路径
+
 ;------------------------------------------------原神下才有效果 ↓↓↓
 #IfWinActive ahk_exe YuanShen.exe
 SysGet, VirtualWidth, 16
@@ -61,27 +64,31 @@ return
 Label:
 	SetTimer, Label, 0
 	{
-		if ( (GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1181,541)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,503)!="0xFFFFFF") and WinActive("ahk_exe YuanShen.exe")
-		;相比较原版把鼠标标识取色点取消了，新增了8个取色点（原版只有2个取色点），要更快的话鼠标标识取色点不能去掉，有能力可以来优化下这个东西，应该还能再优化
-		;已知的问题，东西太多时，F键不在第一个物品的位置可能会无法触发
-			loop 6 
+		if WinActive("ahk_exe YuanShen.exe") ;只在游戏中生效
+		{
+			if ( (GetColor(1130,566)=="0xFFFFFF" or GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1181,541)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,503)!="0xFFFFFF") ;1080p的小伙伴应该可以直接使用，不用重新取色
+			loop 6
 			{
-				Send {WheelDown}   ;下滑滚轮				
-				Sleep 23
+				Send {WheelDown}   ;下滑滚轮
+				Sleep 2
 				Send f
 				Sleep 23
 			}
-		if  GetColor(1480,1012)=="0xFFCC33"  ;自动点击传送
-		{
-			Click 1655,1005
+			if  GetColor(1480,1012)=="0xFFCC33"  ;自动点击传送
+			{
+				Click 1655,1005
+			}
+			/*
+			if GetColor(1447,589)=="0xFFFFFF" ;自动挣脱(稍微有点影响游戏平衡?)
+			{
+				loop 9
+				{
+					Send {Space}
+					Sleep 123
+				}
+			}
+			*/
 		}
-;		if GetColor(1447,589)=="0xFFFFFF" ;自动挣脱(稍微有点影响游戏平衡?)
-;		{
-	;		loop 9
-	;		{
-	;			Send {Space}
-	;			Sleep 123
-	;		}
-	;	}
+		
 	}
 return
