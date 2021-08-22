@@ -93,14 +93,17 @@ SetTimer, Label, 0
 {
     if WinActive("ahk_exe YuanShen.exe") ;只在游戏中生效
     {
-        if ( (GetColor(1130,566)=="0xFFFFFF" or GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1184,546)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,502)!="0xFFFFFF") ;1080p的小伙伴应该可以直接使用，不用重新取色
+        If ( GetColor(66,30)=="0xE9C48F") ;只在游戏主界面生效
         {
-            loop 8
+            if ( (GetColor(1130,566)=="0xFFFFFF" or GetColor(1130,529)=="0xFFFFFF" or GetColor(1130,492)=="0xFFFFFF" or GetColor(1130,457)=="0xFFFFFF" or GetColor(1130,421)=="0xFFFFFF" or GetColor(1130,385)=="0xFFFFFF" or GetColor(1130,360)=="0xFFFFFF") and GetColor(1184,546)!="0xFFFFFF" and GetColor(1193,493)!="0xFFFFFF" and GetColor(1193,522)!="0xFFFFFF" and GetColor(1193,502)!="0xFFFFFF") ;1080p的小伙伴应该可以直接使用，不用重新取色
             {
-                Send f
-                Sleep 12
-                Send {WheelDown} ;下滑滚轮
-                Sleep 24
+                loop 8
+                {
+                    Send f
+                    Sleep 12
+                    Send {WheelDown} ;下滑滚轮
+                    Sleep 24
+                }
             }
         }
         if GetColor(1480,1012)=="0xFFCC33" ;自动点击传送
